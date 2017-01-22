@@ -22,6 +22,9 @@ if (localStorage.getItem(STORAGE_KEY)) {
 }
 
 // Other state (not synced in local storage)
-initialState.screensize = null
+initialState.appnav = {
+  searchText: '',
+  searchTimestamp: null
+}
 
 export const state = initialState

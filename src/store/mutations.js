@@ -6,8 +6,8 @@ export const UPDATE_USER = (state, user) => {
   state.user = user
 }
 
-export const UPDATE_SCREENSIZE = (state, screensize) => {
-  state.screensize = screensize
+export const APPNAV_SEARCH = (state, searchData) => {
+  state.appnav = searchData
 }
 
 /**

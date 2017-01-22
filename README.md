@@ -101,7 +101,7 @@ $ npm install  # do this first before you add more dependencies (to avoid peer w
 
 ## Add Dependencies
 
-(Note: We are installing most dependencies into the dev `--save-dev` section of package.json because the production server will not doing builds. Most of these dependencies are used to build a set of files into your `dist` folder for your production server to use.)
+(Note: We are installing most dependencies into the devDependencies section of package.json using `--save-dev`. The production server will not need those dependencies. Most of these dependencies are used to build a set of files into your `dist` folder for your production server to use.)
 
 Install Vuex, Vue Router, and Vue Resource
 
@@ -464,7 +464,7 @@ Now let's create the following files that will comprise our central Vuex storage
 
 ### Vuex State
 
-Let's setup the state of our central data storage. We'll want some state to be available accross browser tabs (and when the app is closed/reopened) so let's sync this state with LocalStorage. When the app bootstraps, we want to first check in the browser's localStorage and retrieve all of our previously stored data. We'll also have other state we can use for to make component-to-component communication easier (for situations where you don't have a simple parent-child communication, but more complex sibling-to-sibling or other component relationships). Let's just add a property for storing the current user's screensize for demonstration purposes (perhaps CSS media queries are insufficient for our app's needs). 
+Let's setup the state of our central data storage. We'll want some state to be available accross browser tabs (and when the app is closed/reopened) so let's sync this state with LocalStorage. When the app bootstraps, we want to first check in the browser's localStorage and retrieve all of our previously stored data. We'll also have other state we can use for to make component-to-component communication easier (for situations where you don't have a simple parent-child communication, but more complex sibling-to-sibling or other component relationships). Let's just add a property for storing the search text and button press on the navbar for demonstration purposes. 
 
 #### src/store/state.js
 
@@ -493,7 +493,10 @@ if (localStorage.getItem(STORAGE_KEY)) {
 }
 
 // Other state (not synced in local storage)
-initialState.screensize = null
+initialState.appnav = {
+  searchText: '',
+  searchTimestamp: null
+}
 
 export const state = initialState
 
@@ -512,6 +515,10 @@ export const UPDATE_AUTH = (state, auth) => {
 
 export const UPDATE_USER = (state, user) => {
   state.user = user
+}
+
+export const APPNAV_SEARCH = (state, searchData) => {
+  state.appnav = searchData
 }
 
 /**
