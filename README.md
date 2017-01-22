@@ -907,10 +907,10 @@ Take a look through these components and see how they interact with each other.
 
 ## Twitter Bootstrap 4 Configuration
 
- 1. Install Bootstrap 4 and Tether.js, see section: [Add Dependencies](#add-dependencies).
- 2. Add Tether to providePlugin, see section: [Configure JQuery and Lodash and Tether](#configure-jquery-and-lodash-and-tether)
- 3. Require in main.js: see section: [Setup Main and Routes](#setup-main-and-routes)
- 4. Add a folder `style` (if you haven't already) to your `/assets` directory and create the following file:
+ - Install Bootstrap 4 and Tether.js, see section: [Add Dependencies](#add-dependencies).
+ - Add Tether to providePlugin, see section: [Configure JQuery and Lodash and Tether](#configure-jquery-and-lodash-and-tether)
+ - Require in main.js: see section: [Setup Main and Routes](#setup-main-and-routes)
+ - Add a folder `style` (if you haven't already) to your `/assets` directory and create the following file:
 
 #### src/assets/style/_variables.scss
 
@@ -918,7 +918,7 @@ Take a look through these components and see how they interact with each other.
 // copy and paste here everything from the node_modules/bootstrap/scss/_variables.scss
 
 ```
- 5. Import into your app.scss, see section: [App scss](#app-scss).
+ - Import into your app.scss, see section: [App scss](#app-scss).
 
 ## Fonts and Font-Awesome
 
