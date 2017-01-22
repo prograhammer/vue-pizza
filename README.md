@@ -908,7 +908,7 @@ In the `/src/components` folder create the following folders and .Vue files (jus
 
 ```
 
-Here we use a folder for each "page" in our SPA. This allows us to represent "pages" with more than a single .Vue file. We can also add other supporting .Vue components, .js files, or data files. We also have a `common` folder to put any components we feel don't necessarily belong to a page parent.
+Here we use a folder for each "page" in our SPA. This allows us to represent "pages" with more than a single .Vue file. We can also add other supporting .Vue components, .js files, or data files. We also have a `common` folder to put any components we feel don't necessarily belong to a page parent. If over time you feel there are too many folders, you can further group/consolidate pages into folders ("page group folders").
 
 
 ## Twitter Bootstrap 4 Configuration
