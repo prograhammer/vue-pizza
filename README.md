@@ -889,21 +889,27 @@ Delete the `App.vue` file located in /src folder:
 $ rm App.vue
 ```
   
-In the `/src/components` folder create the following vue files (just copy these directly from this repo):
+In the `/src/components` folder create the following folders and .Vue files (just copy these directly from this repo):
 
 ```
 /src
   /components
     - App.vue
     - AppFooter.vue
-    - PageTitle.vue
-    - Dashboard.vue
-    - Login.vue
-    - Navbar.vue
-    - Signup.vue
+    - AppNav.vue
+    /common
+    /dashboard
+      - Dashboard.vue
+    /login
+      - Login.vue
+    /signup
+      - Signup.vue
+    /users
+
 ```
 
-Take a look through these components and see how they interact with each other.
+Here we use a folder for each "page" in our SPA. This allows us to represent "pages" with more than a single .Vue file. We can also add other supporting .Vue components, .js files, or data files. We also have a `common` folder to put any components we feel don't necessarily belong to a page parent.
+
 
 ## Twitter Bootstrap 4 Configuration
 
