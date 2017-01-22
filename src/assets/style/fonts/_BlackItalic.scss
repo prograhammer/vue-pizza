@@ -1,0 +1,8 @@
+/* BEGIN Black Italic */
+@font-face {
+	font-family: Roboto;
+	@include fontdef-woff($FontPath, $FontName, $FontVersion, "BlackItalic");
+	font-weight: 900;
+	font-style: italic;
+}
+/* END Black Italic */

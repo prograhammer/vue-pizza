@@ -1,0 +1,8 @@
+/* BEGIN Light Italic */
+@font-face {
+	font-family: Roboto;
+	@include fontdef-woff($FontPath, $FontName, $FontVersion, "LightItalic");
+	font-weight: 300;
+	font-style: italic;
+}
+/* END Light Italic */

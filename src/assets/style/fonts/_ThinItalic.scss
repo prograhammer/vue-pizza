@@ -1,0 +1,8 @@
+/* BEGIN Thin Italic */
+@font-face {
+	font-family: Roboto;
+	@include fontdef-woff($FontPath, $FontName, $FontVersion, "ThinItalic");
+	font-weight: 100;
+	font-style: italic;
+}
+/* END Thin Italic */
