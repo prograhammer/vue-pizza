@@ -1,6 +1,6 @@
 <template>
 <div class="ev-dashboard">
-  <div class="h1">This is the dashboard</div>
+  <div class="ev-dashboard__heading h1">This is the dashboard</div>
   <div class="card">
     <div class="card-header">
       Example #1

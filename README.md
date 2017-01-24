@@ -109,10 +109,10 @@ Install Vuex, Vue Router, and Vue Resource
 $ npm install vuex vue-router vue-resource --save-dev
 ``` 
 
-Install jQuery, Tether (required by Boostrap), Bootstrap, Font-Awesome, and Lodash
+Install jQuery, Tether (required by Boostrap), Bootstrap, Font-Awesome, Roboto and Lodash
 
 ```shell
-$ npm install jquery tether bootstrap@next font-awesome lodash --save-dev
+$ npm install jquery tether bootstrap@next font-awesome roboto-fontface lodash --save-dev
 ```
 
 Install Vue Multiselect (a vendor component used in an example)
@@ -912,8 +912,12 @@ In the `/src/components` folder create the following folders and .Vue files (jus
     - AppFooter.vue
     - AppNav.vue
     /common
+      - Countries.vue
+      - Spinner.vue
+      - countries.data.js
     /dashboard
       - Dashboard.vue
+      - AddressModal.vue
     /login
       - Login.vue
     /signup
@@ -922,7 +926,7 @@ In the `/src/components` folder create the following folders and .Vue files (jus
 
 ```
 
-Here we use a folder for each "page" in our SPA. This allows us to represent "pages" with more than a single .Vue file. We can also add other supporting .Vue components, .js files, or data files. We also have a `common` folder to put any components we feel don't necessarily belong to a page parent. If over time you feel there are too many folders, you can further group/consolidate pages into folders ("page group folders").
+Here we use a folder for each "page" in our SPA. This allows us to represent "pages" with more than a single .Vue file. We can ad other supporting .Vue components, .js files, or data files. There's also a `common` folder to put any components we feel don't necessarily belong to a page parent. If over time you feel there are too many folders, you can further group/consolidate pages into folders ("page group folders").
 
 
 ## Twitter Bootstrap 4 Configuration
@@ -936,40 +940,17 @@ Here we use a folder for each "page" in our SPA. This allows us to represent "pa
 
 ```scss
 // copy and paste here everything from the node_modules/bootstrap/scss/_variables.scss
+// Then make adjustments to variables for your specific app.
 
 ```
  - Import into your app.scss, see section: [App scss](#app-scss).
 
 ## Fonts and Font-Awesome
 
-Create a folder `fonts` and add your actual font files there:
-
-
-```
-/src
-   /assets
-      /fonts
-         /roboto
-            Black
-              Roboto-Black.ttf
-              Roboto-Black.woff
-              Roboto-Black.woff2
-            BlackItalic
-              // etc.         
-            // etc. more fonts
-```
-
-Let's then put our font scss for Roboto into a different folder:
+Install packages (if you haven't already from earlier section ):
 
 ```
-/src
-   /assets
-     /style
-       /fonts
-         _Black.scss
-         _BlackItalic.scss
-         // ...
-         roboto.scss
+npm install font-awesome roboto-fontface --save-dev
 ```
 
 Then add `_fonts.scss` stylesheet. We'll setup your fonts and also `font-awesome` here:
@@ -982,7 +963,8 @@ $fa-font-path:"../../../node_modules/font-awesome/fonts";
 @import "../../../node_modules/font-awesome/scss/font-awesome";
 
 /* Roboto */
-@import "fonts/roboto"
+$roboto-font-path: '../../../node_modules/roboto-fontface/fonts';
+@import "../../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface";
 
 ```
 
@@ -1009,10 +991,25 @@ Of course if this file gets too big, you can break it up into different supporti
 
 ## Unit Testing and End-to-End Testing
 
-Make sure you installed `babel-polyfill` earlier in this tutorial. If you didn't, you can install it with:  
+Make sure you installed `babel-polyfill` earlier in this tutorial or es6 promises won't work in PhantomJS. If you didn't, you can install it with:  
 
 ```shell
 npm install babel-polyfill --save-dev 
+```
+
+Then update your `test/unit/karma.conf.js` file to include the polyfill:
+
+
+#### test/unit/karma.conf.js
+
+```js
+
+    //...
+
+    files: [
+      '../../node_modules/babel-polyfill/dist/polyfill.js',
+      './index.js'
+    ],
 ```
 
 A unit test is included from the Webpack template already. It's a simple example that tests the content outputted from the Hello vue component:
@@ -1029,9 +1026,11 @@ describe('Hello.vue', () => {
       el: document.createElement('div'),
       render: (h) => h(Hello)
     })
-    expect(vm.$el.querySelector('.hello h1').textContent).to.equal('Hello Vue!')
+    expect(vm.$el.querySelector('.hello h1').textContent)
+      .to.equal('Welcome to Your Vue.js App')
   })
 })
+
 ```
 
 #### End-to-End Testing with Nightwatch.js and Selenium server
@@ -1066,7 +1065,7 @@ module.exports = {
       .pause(1000)
 
       // Assert that user can see dashboard.
-      .assert.containsText('.page-title h2', 'MY DASHBOARD')
+      .assert.containsText('.ev-dashboard__heading h1', 'This is the dashboard')
       .pause(2000)
       .end()
   }
