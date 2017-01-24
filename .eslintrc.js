@@ -13,6 +13,7 @@ module.exports = {
     browser: true
   },
   globals: {
+    '$': true,
     '_': true,
     'utils': true
   }, 

@@ -115,6 +115,12 @@ Install jQuery, Tether (required by Boostrap), Bootstrap, Font-Awesome, and Loda
 $ npm install jquery tether bootstrap@next font-awesome lodash --save-dev
 ```
 
+Install Vue Multiselect (a vendor component used in an example)
+
+```shell
+$ npm install vue-multiselect@next --save-dev
+```
+
 Install Vue ESLint plugin
 
 ```shell
@@ -333,6 +339,7 @@ module.exports = {
     browser: true
   },
   globals: {
+    '$': true,
     '_': true,
     'utils': true
   }, 
