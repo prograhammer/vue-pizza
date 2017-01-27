@@ -78,6 +78,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import AddressModal from './AddressModal.vue'
 
 export default {
@@ -99,6 +100,7 @@ export default {
   },
   computed: {
     reversedSearchText: function () {
+      console.log(Vue.options.store)
       return this.$store.state.appnav.searchText.split('').reverse().join('')
     }
   },
@@ -107,7 +109,7 @@ export default {
       return state.appnav
     }, (appnav) => {
       // Add some behavior here
-      alert('You need to make a component to display search results!')
+      alert('Now you need to make a component to display search results!')
     }, {
       deep: true
     })

@@ -317,9 +317,19 @@ For example, here's how you can install the **Oceanic Next** theme:
  * Search for `SublimeLinter-contrib-eslint` and install it as well.
  * Restart Sublime.
 
+ *Note: In the next section you'll configure eslint. If you install eslint into the same directory you are modifying Sublime files from (and same machine), then Sublimelinter will have no problem using it. Or you can also install eslint (and all the other eslint-\* packages) globally on the same machine as Sublime. But if you are using a server or a virtual machine (Vagrant/Virtualbox) configuration, then you need to tell sublimelinter where eslint is. You can change the path with `Sublime Text -> Prefences -> Package Settings -> SublimeLinter -> Settings-User`.*
+
 ## Configure ESLint
 
 Let's add some more things to eslint from the default given. You'll need to restart Sublime each time you makes changes to this file. One thing to point out is the `env` and `globals` properties. These are necessary so eslint doesn't complain about use of these globals in our JS files (and so we don't have to add something like `/* globals localStorage */` to the top of those files to suppress the errors). See other sections in this tutorial, [Configure JQuery](#configure-jquery) and [Global Helpers](#global-helpers) for information about working in a global context in Webpack.
+
+Make sure you installed the additional eslint dependencies:
+
+```shell
+$ npm install eslint-config-vue eslint-plugin-vue --save-dev
+```
+
+Now open up your eslintrc.js file and make the following changes:
 
 #### eslintrc.js
 
@@ -330,7 +340,7 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
-  extends: 'vue', // <--- add this for .vue
+  extends: 'vue', // <--- needed for eslint-config-vue
   // required to lint *.vue files
   plugins: [
     'html'
