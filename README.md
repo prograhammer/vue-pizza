@@ -317,7 +317,7 @@ For example, here's how you can install the **Oceanic Next** theme:
  * Search for `SublimeLinter-contrib-eslint` and install it as well.
  * Restart Sublime.
 
- *Note: In the next section you'll configure eslint. If you install eslint into the same directory you are modifying Sublime files from (and same machine), then Sublimelinter will have no problem using it. Or you can also install eslint (and all the other eslint-\* packages) globally on the same machine as Sublime. But if you are using a server or a virtual machine (Vagrant/Virtualbox) configuration, then you need to tell sublimelinter where eslint is. You can change the path with `Sublime Text -> Prefences -> Package Settings -> SublimeLinter -> Settings-User`.*
+ *Note: In the next section you'll configure eslint. If you install eslint into the same directory you are modifying Sublime files from (and same machine), then Sublimelinter will have no problem using it. Or you can also install eslint (and all the other eslint-* packages) globally on the same machine as Sublime. But if you are using a server or a virtual machine (Vagrant/Virtualbox) configuration, then you need to tell sublimelinter where eslint is. You can change the path with `Sublime Text -> Prefences -> Package Settings -> SublimeLinter -> Settings-User`.*
 
 ## Configure ESLint
 

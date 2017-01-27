@@ -30,14 +30,14 @@
     <!-- Not logged in -->
     <template v-else>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Back to Website</a>
-        </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/prograhammer/example-vue-project/blob/master/README.md">Tutorial</a>
         </li>
       </ul>
     </template>
