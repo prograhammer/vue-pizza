@@ -11,7 +11,7 @@ if (localStorage.getItem(STORAGE_KEY)) {
 } else {
   initialState = {
     auth: {
-      isLoggedIn: true,
+      isLoggedIn: false,
       accessToken: null,
       refreshToken: null
     },
