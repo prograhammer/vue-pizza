@@ -499,7 +499,7 @@ if (localStorage.getItem(STORAGE_KEY)) {
 } else {
   initialState = {
     auth: {
-      isLoggedIn: true,
+      isLoggedIn: false,
       accessToken: null,
       refreshToken: null
     },
@@ -708,7 +708,7 @@ export default {
       })
     })
 
-    Vue.auth = this
+    Vue.prototype.$auth = Vue.auth = this
   },
 
   /**
