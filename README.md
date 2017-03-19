@@ -75,7 +75,7 @@ $ sudo npm install -g vue-cli
 $ vue init webpack example-vue-project
 ```
 
-(Note: If you've already installed the cli before and when you init a new project you get the message: `A newer version of vue-cli is available`, then ctrl+c at the prompt and then: `npm update vue-cli -g` to update vue-cli.)
+(Note: If you've already installed the cli before and when you init a new project you get the message: `A newer version of vue-cli is available`, then ctrl+c at the prompt and then: `npm install vue-cli -g` to update (re-install) vue-cli to the latest version.)
 
 Now you'll get some output like this:
 
