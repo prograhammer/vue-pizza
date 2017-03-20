@@ -117,6 +117,7 @@ export default {
   setAuthHeader (request) {
     request.headers.set('Authorization', 'Bearer ' + store.state.auth.accessToken)
     // The demo Oauth2 server we are using requires this param, but normally you only set the header.
+    // eslint-disable-next-line camelcase
     request.params.access_token = store.state.auth.accessToken
   },
 
@@ -202,4 +203,3 @@ export default {
     return (response.status === 401 && response.data.error === 'invalid_token')
   }
 }
-
