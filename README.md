@@ -840,7 +840,10 @@ export default {
    * @return {boolean}
    */
   _isInvalidToken (response) {
-    return (response.status === 401 && response.data.error === 'invalid_token')
+    const status = response.status
+    const error = response.data.error
+
+    return (status === 401 && (error === 'invalid_token' || error === 'expired_token'))
   }
 }
 
