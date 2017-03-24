@@ -3,28 +3,28 @@
 // and you'll see this key set below (if logged in):
 export const STORAGE_KEY = 'example-vue-project'
 
-let initialState = {}
-
-// Local storage sync state
-if (localStorage.getItem(STORAGE_KEY)) {
-  initialState = JSON.parse(localStorage.getItem(STORAGE_KEY))
-} else {
-  initialState = {
-    auth: {
-      isLoggedIn: false,
-      accessToken: null,
-      refreshToken: null
-    },
-    user: {
-      name: null
-    }
+let syncedData = {
+  auth: {
+    isLoggedIn: false,
+    accessToken: null,
+    refreshToken: null
+  },
+  user: {
+    name: null
   }
 }
 
-// Other state (not synced in local storage)
-initialState.appnav = {
-  searchText: '',
-  searchTimestamp: null
+const notSyncedData = {
+  appnav: {
+    searchText: '',
+    searchTimestamp: null
+  }
 }
 
-export const state = initialState
+// Sync with local storage.
+if (localStorage.getItem(STORAGE_KEY)) {
+  syncedData = JSON.parse(localStorage.getItem(STORAGE_KEY))
+}
+
+// Merge data and export it.
+export const state = Object.assign(syncedData, notSyncedData)

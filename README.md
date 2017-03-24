@@ -140,11 +140,12 @@ npm install babel-polyfill --save-dev
 $ npm install sass-loader node-sass --save-dev
 ```
   
- Intall stylus:
+ Install stylus (optional):
 
  ```shell
- $ npm install stylus -g
+ $ npm install stylus -g # install stylus globally for Sublime
  $ stylus -V # this confirms that stylus has been added to your path, if not, you need to do so for it to work correctly with Sublime
+ $ npm install stylus stylus-loader --save-dev # also install locally
  ```
 
  See Sublime Text 3 section further down for installing the Stylus package for it.
