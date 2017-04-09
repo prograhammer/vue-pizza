@@ -28,6 +28,7 @@ A scalable Single Page Application (SPA) example. This example uses Vue-cli, Vue
 
 - Currently, remote calls are made to an online example OAuth2 demo server [here](http://brentertainment.com/oauth2/) by Brent Shaffer. We can remove this and instead setup up a Node.js Express OAuth2. 
 - Add a section in this tutorial about working in a production environment.
+- File splitting (webpack) and improving page load times.
 
 ## Install Node
 
