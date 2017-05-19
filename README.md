@@ -1147,7 +1147,7 @@ For example, you can alter the *accessToken* to something invalid (to simulate a
 
 ## Create and Publish a Library for Other Developers to Use
 
-So now you want to go further and develope a component that others can `npm install` and import into their own project?  
+So now you want to go further and develop a component that others can `npm install` and import into their own project?  
 Here you go: https://github.com/prograhammer/vue-library-template  
 
 ## Quick Learning Webpack Resources
