@@ -23,7 +23,7 @@ A scalable Single Page Application (SPA) example. This example uses Vue-cli, Vue
 17. [Unit Testing and End-to-End Testing](#unit-testing-and-end-to-end-testing)
 18. [Run the Dev Server](#run-the-dev-server)
 19. [Vue Dev Tools](#vue-dev-tools)
-20. [Create & Publish a Component/Library for Other Developer to Use](#create-and-publish-a-library-for-other-developers-to-use) 
+20. [Create & Publish a Component/Library for Other Developers to Use](#create-and-publish-a-library-for-other-developers-to-use) 
 21. [Quick Learning Webpack Resources](#quick-learning-webpack-resources)
 
 ## Todo
