@@ -1145,7 +1145,7 @@ If you click on the "Vuex" tab, you can see all data from the store in the right
 
 For example, you can alter the *accessToken* to something invalid (to simulate an expired *oauth access_token* without waiting on actual expiration) in the pasted data. Then click the `import button` again and the Vuex store will live update. Now you can confirm that the automatic refreshToken interceptor works.
 
-## Create & Publish a Library for Other Developers to Use
+## Create and Publish a Library for Other Developers to Use
 
 So now you want to go further and develope a component that others can `npm install` and import into their own project?  
 Here you go: https://github.com/prograhammer/vue-library-template  
