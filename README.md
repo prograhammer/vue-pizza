@@ -5,24 +5,26 @@ A scalable Single Page Application (SPA) example. This example uses Vue-cli, Vue
 
 ## Table of Contents
 1. [Todo](#todo)
-1. [Install Node](#install-node)
-2. [Install Vue-CLI](#install-vue-cli)
-3. [Add Dependencies](#add-dependencies)
-4. [Configure JQuery and Lodash and Tether](#configure-jquery-and-lodash-and-tether)
-5. [Global Utilities](#global-utilities)
-6. [Configure Sublime Text 3](#configure-sublime-text-3)
-7. [Configure ESLint](#configure-eslint)
-8. [Setup Main and Routes](#setup-main-and-routes)
-9. [Setup Authentication (OAuth2), User Profile, and Vuex](#setup-authentication-user-profile-and-vuex)
-10. [Proxy Api Calls in Webpack Dev Server](#proxy-api-calls-in-webpack-dev-server)
-11. [Components](#components)
-12. [Twitter Bootstrap 4 Configuration](#twitter-bootstrap-4-configuration)
-13. [Fonts and Font-Awesome](#fonts-and-font-awesome)
-14. [Images and Other Assets](#images-and-other-assets)
-15. [App.scss](#app-scss)
-16. [Unit Testing and End-to-End Testing](#unit-testing-and-end-to-end-testing)
-17. [Run the Dev Server](#run-the-dev-server)
-18. [Vue Dev Tools](#vue-dev-tools)
+2. [Install Node](#install-node)
+3. [Install Vue-CLI](#install-vue-cli)
+4. [Add Dependencies](#add-dependencies)
+5. [Configure JQuery and Lodash and Tether](#configure-jquery-and-lodash-and-tether)
+6. [Global Utilities](#global-utilities)
+7. [Configure Sublime Text 3](#configure-sublime-text-3)
+8. [Configure ESLint](#configure-eslint)
+9. [Setup Main and Routes](#setup-main-and-routes)
+10. [Setup Authentication (OAuth2), User Profile, and Vuex](#setup-authentication-user-profile-and-vuex)
+11. [Proxy Api Calls in Webpack Dev Server](#proxy-api-calls-in-webpack-dev-server)
+12. [Components](#components)
+13. [Twitter Bootstrap 4 Configuration](#twitter-bootstrap-4-configuration)
+14. [Fonts and Font-Awesome](#fonts-and-font-awesome)
+15. [Images and Other Assets](#images-and-other-assets)
+16. [App.scss](#app-scss)
+17. [Unit Testing and End-to-End Testing](#unit-testing-and-end-to-end-testing)
+18. [Run the Dev Server](#run-the-dev-server)
+19. [Vue Dev Tools](#vue-dev-tools)
+20. [Create & Publish a Component/Library for Other Developer to Use](#create-and-publish-a-library-for-other-developers-to-use) 
+21. [Quick Learning Webpack Resources](#quick-learning-webpack-resources)
 
 ## Todo
 
@@ -1130,7 +1132,7 @@ $ npm run dev
 Open your browser and visit http://localhost:8080 . You should see something like this:
     
           
-<img src="docs/images/home-page.png" width=1200" />  
+<img src="docs/images/home-page.png" width=1200 />
 
 ## Vue Dev Tools
 
@@ -1142,3 +1144,13 @@ Once installed, Open Chrome dev tools and go to the "Vue" tab.
 If you click on the "Vuex" tab, you can see all data from the store in the right pane. Click the `export button` to copy the data to the clipboard. Click the `import button` and paste the clipboard data there. 
 
 For example, you can alter the *accessToken* to something invalid (to simulate an expired *oauth access_token* without waiting on actual expiration) in the pasted data. Then click the `import button` again and the Vuex store will live update. Now you can confirm that the automatic refreshToken interceptor works.
+
+## Create & Publish a Library for Other Developers to Use
+
+So now you want to go further and develope a component that others can `npm install` and import into their own project?  
+Here you go: https://github.com/prograhammer/vue-library-template  
+
+## Quick Learning Webpack Resources
+
+- SurviveJs: https://survivejs.com/webpack/introduction/  
+- Official Webpack Tutorial: https://webpack.js.org/guides/get-started/  
