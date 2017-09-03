@@ -37,7 +37,7 @@ module.exports = merge(baseWebpackConfig, {
       'window.jQuery': 'jquery',
       jQuery: 'jquery',
       '_': 'lodash',
-      'Tether': 'tether',
+      Popper: ['popper.js', 'default'],
       utils: 'utils'
     })
   ]

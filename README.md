@@ -8,7 +8,7 @@ A scalable Single Page Application (SPA) example. This example uses Vue-cli, Vue
 2. [Install Node](#install-node)
 3. [Install Vue-CLI](#install-vue-cli)
 4. [Add Dependencies](#add-dependencies)
-5. [Configure JQuery and Lodash and Tether](#configure-jquery-and-lodash-and-tether)
+5. [Configure JQuery and Lodash and Popper](#configure-jquery-and-lodash-and-popper)
 6. [Global Utilities](#global-utilities)
 7. [Configure Sublime Text 3](#configure-sublime-text-3)
 8. [Configure ESLint](#configure-eslint)
@@ -113,10 +113,16 @@ Install Vuex and Vue Resource (Vue Router was installed from vue-cli earlier)
 $ npm install vuex vue-resource --save
 ``` 
 
-Install jQuery, Tether (required by Boostrap), Bootstrap, Font-Awesome, Roboto and Lodash
+Install jQuery and Popper (required by Bootstrap), Bootstrap, Font-Awesome, Roboto and Lodash
 
 ```shell
-$ npm install jquery tether bootstrap@next font-awesome roboto-fontface lodash --save-dev
+$ npm install jquery popper.js bootstrap@next font-awesome roboto-fontface lodash --save-dev
+```
+
+Install Bootstrap webpack dependencies ([source](https://getbootstrap.com/docs/4.0/getting-started/webpack/))
+
+```shell
+$ npm install postcss-loader precss style-loader --save-dev
 ```
 
 Install Vue Multiselect (a vendor component used in an example)
@@ -155,11 +161,59 @@ $ npm install sass-loader node-sass --save-dev
 
  *(This concludes all extra dependencies, however feel free to check the `package.json` in the Github repo)*
 
-## Configure JQuery and Lodash and Tether
+## Configure Bootstrap webpack SCSS loaders
+
+Open the \build\utils.js file and add the following under the pre-existing require statements
+
+```JavaScript
+var bootstrapUtil = require('./bootstrapUtil')
+```
+
+In the same file, replace the first line below with the second line
+
+```JavaScript
+scss: generateLoaders('sass'),
+scss: bootstrapUtil.generateScssLoaders(options, { }),
+```
+
+Add a file called bootstrapUtil.js in the same build directory with the following content
+
+```JavaScript
+exports.generateScssLoaders = function (options, loaderOptions) {
+  // see: https://getbootstrap.com/docs/4.0/getting-started/webpack/
+  return [
+    {
+      loader: 'style-loader', // inject CSS to page
+    }, 
+    {
+      loader: 'css-loader', // translates CSS into CommonJS modules
+    }, 
+    {
+      loader: 'postcss-loader', // Run post css actions
+      options: {
+        plugins: function () { // post css plugins, can be exported to postcss.config.js
+          return [
+            require('precss'),
+            require('autoprefixer')
+          ];
+        }
+      }
+    }, 
+    {
+      loader: 'sass-loader', // compiles SASS to CSS
+      options: Object.assign({}, loaderOptions, {
+        sourceMap: options.sourceMap
+      })
+    }
+  ]
+}
+```
+
+## Configure JQuery, Lodash and Popper
 
 #### Option #1: Use ProvidePlugin
 
-Add the [ProvidePlugin](https://webpack.github.io/docs/list-of-plugins.html#provideplugin) to the plugins array in both `build/webpack.dev.conf.js` and `build/webpack.prod.conf.js` so that jQuery and Lodash become globally available to all your modules (and also Tether for Bootstrap):
+Add the [ProvidePlugin](https://webpack.github.io/docs/list-of-plugins.html#provideplugin) to the plugins array in both `build/webpack.dev.conf.js` and `build/webpack.prod.conf.js` so that jQuery and Lodash become globally available to all your modules (and also Popper for Bootstrap):
 
 #### build/webpack.dev.conf.js, build/webpack.prod.conf.js
 
@@ -174,7 +228,7 @@ Add the [ProvidePlugin](https://webpack.github.io/docs/list-of-plugins.html#prov
       'window.jQuery': 'jquery',
       jQuery: 'jquery',
       '_': 'lodash',
-      'Tether': 'tether',
+      Popper: ['popper.js', 'default'],
       utils: 'utils'
     })
   ]
@@ -262,7 +316,7 @@ So we use the `utils` alias in the plugin:
       'window.jQuery': 'jquery',
       jQuery: 'jquery',
       '_': 'lodash',
-      'Tether': 'tether',
+      Popper: ['popper.js', 'default'],
       utils: 'utils'
     })
   ]
@@ -949,8 +1003,8 @@ Here we use a folder for each "page" in our SPA. This allows us to represent "pa
 
 ## Twitter Bootstrap 4 Configuration
 
- - Install Bootstrap 4 and Tether.js, see section: [Add Dependencies](#add-dependencies).
- - Add Tether to providePlugin, see section: [Configure JQuery and Lodash and Tether](#configure-jquery-and-lodash-and-tether)
+ - Install Bootstrap 4, jQuery and Popper.js, see section: [Add Dependencies](#add-dependencies).
+ - Add Popper to providePlugin, see section: [Configure JQuery and Lodash and Popper](#configure-jquery-and-lodash-and-popper)
  - Require in main.js: see section: [Setup Main and Routes](#setup-main-and-routes)
  - Add a folder `style` (if you haven't already) to your `/assets` directory and create the following file:
 

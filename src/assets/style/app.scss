@@ -1,6 +1,6 @@
 @import 'fonts';
-@import 'variables';
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import 'custom';
+@import '~bootstrap/scss/bootstrap';
 @import '../../../node_modules/vue-multiselect/dist/vue-multiselect.min.css';
 
 // Some quick styling to match the multiselct with Bootstrap.
@@ -13,9 +13,9 @@
 }
 
 #app .multiselect--active .multiselect__tags {
-  color: $input-color-focus;
-  background-color: $input-bg-focus;
-  border-color: $input-border-focus;
+  color: $input-focus-color;
+  background-color: $input-focus-bg;
+  border-color: $input-focus-border-color;
   outline: none;
 }
 
