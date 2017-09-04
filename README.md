@@ -209,6 +209,29 @@ exports.generateScssLoaders = function (options, loaderOptions) {
 }
 ```
 
+## Setup Favicon with webpack
+
+Add your favicon.ico into the /src/assets/images directory. 
+
+Add the <link> tag into your index.html.
+
+```html
+<link rel="icon" href="/favicon.ico">
+```
+
+Define the file in webpack inside the HtmlWebpackPlugin options object:
+
+#### build/webpack.dev.conf.js, build/webpack.prod.conf.js
+
+```JavaScript
+new HtmlWebpackPlugin({
+  favicon: 'src/assets/images/favicon.ico',
+  // ...
+}
+```
+
+It should look somthing 
+
 ## Configure JQuery, Lodash and Popper
 
 #### Option #1: Use ProvidePlugin
