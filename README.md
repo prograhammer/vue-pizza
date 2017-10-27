@@ -329,9 +329,9 @@ Make sure you installed the additional eslint dependencies:
 $ npm install eslint-config-vue eslint-plugin-vue --save-dev
 ```
 
-Now open up your eslintrc.js file and make the following changes:
+Now open up your .eslintrc.js file and make the following changes:
 
-#### eslintrc.js
+#### .eslintrc.js
 
 ```js
 module.exports = {
