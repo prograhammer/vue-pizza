@@ -1,0 +1,46 @@
+// Place your settings in this file to override the default and user settings
+{
+    // Settings for .js, .vue, .styl files.
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[vue]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[stylus]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+
+    // This is required for ESLint to work in Vue in VS Code.
+    "eslint.options": {
+        "extensions": [".html", ".js", ".vue", ".jsx"]
+    },
+    "eslint.validate": [
+        {
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        }
+    ],
+
+    // When you hit ctrl+e to search, you don't want node_modules to be included.
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/tmp": true
+    }
+}
