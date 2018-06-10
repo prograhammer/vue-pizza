@@ -10,7 +10,11 @@
     "build": "node build/build.js",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/e2e/specs",
+    "deploy": "gh-pages-deploy"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist"
   },
   "dependencies": {
     "vue": "^2.5.2",
@@ -50,6 +54,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.5",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gh-pages-deploy": "^0.4.2",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "nightwatch": "^0.9.16",
