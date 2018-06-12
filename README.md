@@ -2,6 +2,10 @@
 
 > A tasty Vue.js starter project. Clone, remove `vue-pizza` everywhere, and add your own features. Also, read through the wiki.
 
+## Demo
+
+[https://vue.pizza/app](https://vue.pizza/app)
+
 ## Why?
 
 A lot of starter projects or examples of Vue.js in the wild were: 
