@@ -29,7 +29,7 @@ function guardRoute (to, from, next) {
  */
 const router = new Router({
   base: '/app',
-  mode: 'history',
+  // mode: 'history',  // <-- uncomment to turn on history mode (preferred)
   routes: routes.map(route => ({
     name: route.name,
     path: route.path,
