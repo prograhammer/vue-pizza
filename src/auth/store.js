@@ -18,7 +18,7 @@ const auth = {
       state = Object.assign({}, defaults, data)
     },
     clear (state) {
-      state = Object.assign({}, defaults)
+      state = Object.assign(state, defaults)
     }
   },
 

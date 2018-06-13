@@ -1,14 +1,10 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import auth from '@/auth/store'
 import * as constants from '@/constants'
-
-Vue.use(Vuex)
 
 // Sync with local storage.
 if (localStorage.getItem(constants.STORAGE_KEY)) {
   const syncedState = JSON.parse(localStorage.getItem(constants.STORAGE_KEY))
-  auth.state = syncedState.auth ? Object.assign(auth.state, syncedState.auth) : auth.state
+  auth.state = Object.assign(auth.state, syncedState.auth)
 }
 
 // LocalStorage plugin.
