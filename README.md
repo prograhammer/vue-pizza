@@ -4,7 +4,7 @@
 
 ## Demo
 
-<a href="https://vue.pizza/app" target="_blank">https://vue.pizza/app</a>
+[https://vue.pizza/app](https://vue.pizza/app){:target="_blank"}
 
 ## Why?
 
