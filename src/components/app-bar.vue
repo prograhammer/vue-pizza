@@ -44,7 +44,6 @@ export default {
 <style lang="stylus">
 #app
   .my-appbar
-    z-index: 7
 
     .toolbar__title
       margin-left: 0
