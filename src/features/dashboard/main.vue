@@ -74,7 +74,7 @@ v-container.my-dashboard(
         )
     v-flex(d-flex xs12 sm12 md6)
       v-card
-        v-card-media(src="/static/images/mountains.png" height="200px")
+        v-card-media(src="static/images/mountains.png" height="200px")
           v-layout.my-dashboard__media(column)
             v-card-title(class="white--text pl-5 pt-5")
               .display-1.pl-5.pt-5 Main Contacts
