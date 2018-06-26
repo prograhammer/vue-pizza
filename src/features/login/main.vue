@@ -9,7 +9,7 @@
       dense
     )
       v-btn(icon)
-        img.my-login__logo(src='~/@/assets/images/logo-dark.svg' alt='VuePizza Logo')
+        img.my-login__logo(src='~/@/assets/images/logo.svg' alt='VuePizza Logo')
       v-spacer
       v-btn(flat)
         | GitHub

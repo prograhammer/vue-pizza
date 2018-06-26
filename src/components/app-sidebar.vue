@@ -8,8 +8,7 @@
     dark
   )
     v-layout(justify-center wrap)
-      // img.my-sidebar__logo(src='~/@/assets/images/logo-light.svg' alt='Vue Example Project')
-      // img.my-sidebar__backdrop(src='~/@/assets/images/backdrop.jpg' alt='Vue Example Project')
+      // img.my-sidebar__backdrop(src='~/@/assets/images/backdrop.jpg' alt='Vue Pizza')
       .my-sidebar__hero-pattern
 
     v-divider
