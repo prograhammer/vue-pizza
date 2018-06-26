@@ -1,6 +1,6 @@
 {
   "name": "vue-pizza",
-  "short_name": "vue pizza",
+  "short_name": "Vue Pizza",
   "icons": [
     {
       "src": "/app/static/img/icons/android-chrome-192x192.png",
