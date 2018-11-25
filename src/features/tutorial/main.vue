@@ -8,7 +8,7 @@ v-container.my-tutorial(fluid fill-height text-xs-center)
         br
       div
         v-btn(
-          color="primay"
+          color="primary"
           href="https://github.com/prograhammer/vue-pizza/wiki"
           target="_blank"
         ) Go to Tutorial
