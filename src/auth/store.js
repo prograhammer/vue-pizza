@@ -15,10 +15,14 @@ const auth = {
 
   mutations: {
     update (state, data) {
-      state = Object.assign({}, defaults, data)
+      Object.keys(state).forEach(index => {
+        state[index] = data[index]
+      })
     },
     clear (state) {
-      state = Object.assign(state, defaults)
+      Object.keys(state).forEach(index => {
+        state[index] = defaults[index]
+      })
     }
   },
 

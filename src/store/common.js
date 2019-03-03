@@ -54,7 +54,9 @@ export default {
     },
 
     clear (state) {
-      state = Object.assign({}, defaults)
+      Object.keys(state).forEach(index => {
+        state[index] = defaults[index]
+      })
     }
   },
 
